@@ -6,28 +6,26 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CourseAdapter(private val courses: List<String>, private val onItemClick: (Int) -> Unit) :
-    RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
-
-    inner class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val courseNameTextView: TextView = itemView.findViewById(R.id.CoursesRecyclerView1)
-
-        init {
-            itemView.setOnClickListener {
-                onItemClick(adapterPosition)
-            }
-        }
-    }
+class CoursesAdapter(private val courses: List<String>, private val clickListener: (String) -> Unit) :
+    RecyclerView.Adapter<CoursesAdapter.CourseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_course, parent, false)
-        return CourseViewHolder(itemView)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_course, parent, false)
+        return CourseViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-        holder.courseNameTextView.text = courses[position]
+        holder.bind(courses[position], clickListener)
     }
 
-    override fun getItemCount() = courses.size
+    override fun getItemCount(): Int = courses.size
+
+    class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val courseTitle: TextView = itemView.findViewById(R.id.courseTitle)
+
+        fun bind(course: String, clickListener: (String) -> Unit) {
+            courseTitle.text = course
+            itemView.setOnClickListener { clickListener(course) }
+        }
+    }
 }
