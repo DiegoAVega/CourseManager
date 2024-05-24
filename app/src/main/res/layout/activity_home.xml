@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/CoursesRecyclerView"
+        android:id="@+id/CoursesRecyclerView1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="25dp"
@@ -35,6 +35,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TitleTextView"
         tools:itemCount="5"
-        tools:listitem="@layout/item_course"
-        />
+        tools:listitem="@layout/item_course" />
+
+    <Button
+        android:id="@+id/btnCircular1"
+        android:layout_width="81dp"
+        android:layout_height="71dp"
+        android:background="@drawable/circular_button"
+        android:color="#D6F3ED"
+        android:text="+"
+        android:textColorLink="#D6F3ED"
+        app:layout_constraintBottom_toBottomOf="@+id/CoursesRecyclerView1"
+        app:layout_constraintEnd_toEndOf="@+id/CoursesRecyclerView1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

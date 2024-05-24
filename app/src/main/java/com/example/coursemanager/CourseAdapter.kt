@@ -10,7 +10,7 @@ class CourseAdapter(private val courses: List<String>, private val onItemClick: 
     RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
 
     inner class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val courseNameTextView: TextView = itemView.findViewById(R.id.CoursesRecyclerView)
+        val courseNameTextView: TextView = itemView.findViewById(R.id.CoursesRecyclerView1)
 
         init {
             itemView.setOnClickListener {

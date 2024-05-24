@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_detailCourseFragment_to_homeActivity"
             app:destination="@id/homeActivity" />
+        <action
+            android:id="@+id/action_detailCourseFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
     </fragment>
     <fragment
         android:id="@+id/taskDetailFragment"
@@ -31,4 +34,13 @@
             android:id="@+id/action_taskDetailFragment_to_detailCourseFragment"
             app:destination="@id/detailCourseFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.coursemanager.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/addTaskFragment"
+        android:name="com.example.coursemanager.AddTaskFragment"
+        android:label="AddTaskFragment" />
 </navigation>
