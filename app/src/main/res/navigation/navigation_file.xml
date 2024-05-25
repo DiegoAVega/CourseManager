@@ -3,44 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_file"
-    app:startDestination="@id/homeActivity">
-
-    <activity
-        android:id="@+id/homeActivity"
-        android:name="com.example.coursemanager.HomeActivity"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home" />
+    app:startDestination="@id/courseListFragment">
     <fragment
-        android:id="@+id/detailCourseFragment"
-        android:name="com.example.coursemanager.DetailCourseFragment"
-        android:label="fragment_detail_course"
-        tools:layout="@layout/fragment_detail_course" >
+        android:id="@+id/courseListFragment"
+        android:name="com.example.coursemanager.CourseListFragment"
+        android:label="fragment_course_list"
+        tools:layout="@layout/fragment_course_list" >
         <action
-            android:id="@+id/action_detailCourseFragment_to_taskDetailFragment"
-            app:destination="@id/taskDetailFragment" />
-        <action
-            android:id="@+id/action_detailCourseFragment_to_homeActivity"
-            app:destination="@id/homeActivity" />
-        <action
-            android:id="@+id/action_detailCourseFragment_to_addTaskFragment"
+            android:id="@+id/action_courseListFragment_to_addTaskFragment"
             app:destination="@id/addTaskFragment" />
     </fragment>
     <fragment
-        android:id="@+id/taskDetailFragment"
-        android:name="com.example.coursemanager.TaskDetailFragment"
-        android:label="fragment_task_detail"
-        tools:layout="@layout/fragment_task_detail" >
-        <action
-            android:id="@+id/action_taskDetailFragment_to_detailCourseFragment"
-            app:destination="@id/detailCourseFragment" />
-    </fragment>
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.coursemanager.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
-    <fragment
         android:id="@+id/addTaskFragment"
         android:name="com.example.coursemanager.AddTaskFragment"
-        android:label="AddTaskFragment" />
+        android:label="fragment_add_task"
+        tools:layout="@layout/fragment_add_task" />
 </navigation>

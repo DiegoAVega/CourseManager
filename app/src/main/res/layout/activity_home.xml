@@ -6,57 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/TitleTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="100dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Mis cursos"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/CoursesRecyclerView1"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="25dp"
+        app:defautNavHost = "true"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleTextView"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_course" />
-
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/TitleTextView"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginTop="40dp" />
+        app:navGraph= "@navigation/navigation_file"
+        />
 
-    <Button
-        android:id="@+id/btnCircular1"
-        android:layout_width="81dp"
-        android:layout_height="71dp"
-        android:background="@drawable/circular_button"
-        android:color="#D6F3ED"
-        android:text="+"
-        android:textColorLink="#D6F3ED"
-        app:layout_constraintBottom_toBottomOf="@+id/CoursesRecyclerView1"
-        app:layout_constraintEnd_toEndOf="@+id/CoursesRecyclerView1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
