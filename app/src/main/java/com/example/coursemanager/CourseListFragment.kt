@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CourseListFragment : Fragment() {
     lateinit var addButton: Button
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,11 +22,14 @@ class CourseListFragment : Fragment() {
         val recyclerView: RecyclerView = view.findViewById(R.id.CoursesRecyclerView1)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = CoursesAdapter(courses) { course ->
+            findNavController().navigate(R.id.action_courseListFragment_to_detailCourseFragment)
+
         }
         addButton=view.findViewById(R.id.btnCircular1)
         addButton.setOnClickListener{
             findNavController().navigate(R.id.action_courseListFragment_to_addTaskFragment)
         }
+
         return view
     }
 }
