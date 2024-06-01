@@ -12,10 +12,18 @@
         <action
             android:id="@+id/action_courseListFragment_to_addTaskFragment"
             app:destination="@id/addTaskFragment" />
+        <action
+            android:id="@+id/action_courseListFragment_to_detailCourseFragment"
+            app:destination="@id/detailCourseFragment" />
     </fragment>
     <fragment
         android:id="@+id/addTaskFragment"
         android:name="com.example.coursemanager.AddTaskFragment"
         android:label="fragment_add_task"
         tools:layout="@layout/fragment_add_task" />
+    <fragment
+        android:id="@+id/detailCourseFragment"
+        android:name="com.example.coursemanager.DetailCourseFragment"
+        android:label="fragment_detail_course"
+        tools:layout="@layout/fragment_detail_course" />
 </navigation>
