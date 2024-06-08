@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CoursesAdapter(private val courses: List<String>, private val clickListener: (String) -> Unit) :
+class CoursesAdapter(private val courses: List<String>, private val callback: (Int) -> Unit):
     RecyclerView.Adapter<CoursesAdapter.CourseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
@@ -15,7 +15,8 @@ class CoursesAdapter(private val courses: List<String>, private val clickListene
     }
 
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-        holder.bind(courses[position], clickListener)
+        holder.setup(courses[position])
+        holder.itemView.setOnClickListener { callback(position) }
     }
 
     override fun getItemCount(): Int = courses.size
@@ -23,9 +24,8 @@ class CoursesAdapter(private val courses: List<String>, private val clickListene
     class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val courseTitle: TextView = itemView.findViewById(R.id.courseTitle)
 
-        fun bind(course: String, clickListener: (String) -> Unit) {
+        fun setup(course: String) {
             courseTitle.text = course
-            itemView.setOnClickListener { clickListener(course) }
         }
     }
 }
