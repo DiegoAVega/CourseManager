@@ -25,5 +25,9 @@
         android:id="@+id/detailCourseFragment"
         android:name="com.example.coursemanager.DetailCourseFragment"
         android:label="fragment_detail_course"
-        tools:layout="@layout/fragment_detail_course" />
+        tools:layout="@layout/fragment_detail_course" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
 </navigation>

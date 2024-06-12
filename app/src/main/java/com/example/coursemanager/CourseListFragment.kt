@@ -25,7 +25,7 @@ class CourseListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter = CoursesAdapter(courses) { position ->
             println(position)
-            findNavController().navigate(R.id.action_courseListFragment_to_detailCourseFragment)
+            findNavController().navigate(CourseListFragmentDirections.actionCourseListFragmentToDetailCourseFragment(position))
         }
         addButton=view.findViewById(R.id.btnCircular1)
         addButton.setOnClickListener{
