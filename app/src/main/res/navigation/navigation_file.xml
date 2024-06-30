@@ -10,11 +10,11 @@
         android:label="fragment_course_list"
         tools:layout="@layout/fragment_course_list" >
         <action
-            android:id="@+id/action_courseListFragment_to_addTaskFragment"
-            app:destination="@id/addTaskFragment" />
-        <action
             android:id="@+id/action_courseListFragment_to_detailCourseFragment"
             app:destination="@id/detailCourseFragment" />
+        <action
+            android:id="@+id/action_courseListFragment_to_addCourseFragment"
+            app:destination="@id/addCourseFragment" />
     </fragment>
     <fragment
         android:id="@+id/addTaskFragment"
@@ -26,6 +26,26 @@
         android:name="com.example.coursemanager.DetailCourseFragment"
         android:label="fragment_detail_course"
         tools:layout="@layout/fragment_detail_course" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailCourseFragment_to_addTaskFragment"
+            app:destination="@id/addTaskFragment" />
+        <action
+            android:id="@+id/action_detailCourseFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCourseFragment"
+        android:name="com.example.coursemanager.AddCourseFragment"
+        android:label="fragment_add_course"
+        tools:layout="@layout/fragment_add_course" />
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.example.coursemanager.TaskDetailFragment"
+        android:label="fragment_task_detail"
+        tools:layout="@layout/fragment_task_detail" >
         <argument
             android:name="position"
             app:argType="integer" />

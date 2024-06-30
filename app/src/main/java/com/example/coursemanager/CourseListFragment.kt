@@ -29,7 +29,7 @@ class CourseListFragment : Fragment() {
         }
         addButton=view.findViewById(R.id.btnCircular1)
         addButton.setOnClickListener{
-            findNavController().navigate(R.id.action_courseListFragment_to_addTaskFragment)
+            findNavController().navigate(R.id.action_courseListFragment_to_addCourseFragment)
         }
         return view
     }
