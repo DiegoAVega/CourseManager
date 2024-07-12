@@ -5,16 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.coursemanager.DetailCourseFragmentDirections.Companion.actionDetailCourseFragmentToTaskDetailFragment
 
 
 class DetailCourseFragment : Fragment() {
-
+    lateinit var addButton: Button
     val args: DetailCourseFragmentArgs by navArgs()
     private lateinit var titleTextView: TextView
 
@@ -34,10 +34,12 @@ class DetailCourseFragment : Fragment() {
 
         println(args.position)
 
+        addButton = view.findViewById(R.id.btnCircular2)
+        addButton.setOnClickListener{
+            findNavController().navigate(R.id.action_detailCourseFragment_to_addTaskFragment)}
         titleTextView = view.findViewById(R.id.textViewTitle)
         titleTextView.text = InfoProvider.courses[args.position].toString()
         return view
     }
-
 
 }

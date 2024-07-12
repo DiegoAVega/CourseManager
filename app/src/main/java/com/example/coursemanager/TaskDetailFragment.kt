@@ -13,7 +13,7 @@ class TaskDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view=inflater.inflate(R.layout.fragment_add_task, container, false)
+        val view=inflater.inflate(R.layout.fragment_task_detail, container, false)
 
 
 
